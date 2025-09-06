@@ -1,0 +1,26 @@
+[package]
+name = "pir_onboard_led_with_probe_logging"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+embedded-hal = "1.0.0"
+rp2040-hal = "0.11.0"
+panic-probe = { version = "1.0.0", features = ["print-defmt"] }
+
+# logging
+defmt = "1.0.1"
+defmt-rtt = "1.0.0"
+
+[dependencies.cortex-m-rtic]
+optional = true
+
+[build-dependencies]
+# needed for linking
+cortex-m-rt = "0.7"
+
+[profile.release]
+opt-level = "s"
+
